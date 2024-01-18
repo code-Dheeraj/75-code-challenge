@@ -18,7 +18,7 @@ class Solution {
                 }
             }
             else{  // right part is sorted
-                if(target<=nums[mid] && target<= nums[high]){ // target lie between mid and high
+                if(target>=nums[mid] && target<= nums[high]){ // target lie between mid and high
                     low=mid+1;
                 }
                 else{
