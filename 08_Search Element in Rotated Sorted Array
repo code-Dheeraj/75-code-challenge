@@ -9,21 +9,20 @@ class Solution {
             if(nums[mid]==target){
                 return mid;
             }
-
-            if(nums[low]<=nums[mid]){
-                if(nums[low]<=target && nums[mid]>=target){
+            if(nums[low]<=nums[mid]){  // left part is sorted 
+                if(target>=nums[low] && nums[mid]>=target){  // target lie between low and mid
                     high=mid-1;
                 }
                 else{
-                    low=mid+1;
+                    low=mid+1;  // target lie between mid and high
                 }
             }
-            else{
-                if(nums[mid]<=target && nums[high]>=target){
+            else{  // right part is sorted
+                if(target<=nums[mid] && target<= nums[high]){ // target lie between mid and high
                     low=mid+1;
                 }
                 else{
-                    high=mid-1;
+                    high=mid-1; // taget lie between low and mid
                 }   
             }
         }
